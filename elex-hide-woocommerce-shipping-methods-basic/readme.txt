@@ -2,9 +2,9 @@
 Contributors: ELEXtensions
 Tags: free shipping, hide, hide shipping methods, local pickup, woocommerce
 Requires at least: 3.0.1
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPLv2 or later
 URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,10 @@ If you are facing any issues, please create a topic at the plugin support sectio
 3. That's it! you can now configure the plugin.
 
 == Changelog ==
+
+= 1.4.5 =
+* Tested OK with WordPress 6.7
+* Tested OK with WooCommerce 9.7
 
 = 1.4.4 =
 * Tested OK with WooCommerce 9.3
@@ -203,6 +207,10 @@ If you are facing any issues, please create a topic at the plugin support sectio
 * Initial Version release.
 
 == Upgrade Notice ==
+
+= 1.4.5 =
+* Tested OK with WordPress 6.7
+* Tested OK with WooCommerce 9.7
 
 = 1.4.4 =
 * Tested OK with WooCommerce 9.3
