@@ -3,7 +3,7 @@
  * Plugin Name: ELEX Hide WooCommerce Shipping Methods (BASIC)
  * Plugin URI: https://elextensions.com/plugin/elex-hide-woocommerce-shipping-methods-plugin-free-version/
  * Description: Hide WooCommerce Shipping Methods based on certain conditions set. Set conditions based on Shipping Class, Order Total Weight, Certain Shipping Methods, etc.
- * Version: 1.4.7
+ * Version: 1.4.8
  * Author: ELEXtensions
  * Author URI: https://elextensions.com/
  * Developer: ELEXtensions
