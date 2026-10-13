@@ -120,7 +120,7 @@
 				<strong>
 					<div style="background-color:#337ab7;height: 30px;color:white;">
 						<center>
-							<h3 style="color: white;padding-top: 2px;"><?php esc_html_e( 'More ELEXtensions plugins you may be interested in...' ); ?></h3>
+							<h3 style="color: white;padding-top: 2px;"><?php esc_html_e( 'More ELEXtensions plugins you may be interested in...', 'elex-hide-woocommerce-shipping-methods-basic' ); ?></h3>
 						</center>
 					</div>
 				</strong>				</div> 

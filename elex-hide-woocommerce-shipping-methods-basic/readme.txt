@@ -1,12 +1,12 @@
 === ELEX Hide WooCommerce Shipping Methods ===
 Contributors: ELEXtensions
 Tags: free shipping, hide, hide shipping methods, local pickup, woocommerce
-Requires at least: 3.0.1
-Tested up to: 6.9
+Requires at least: 4.1.0
+Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: GPLv2 or later
-URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
@@ -73,6 +73,11 @@ If you are facing any issues, please create a topic at the plugin support sectio
 3. That's it! you can now configure the plugin.
 
 == Changelog ==
+
+= 1.4.9 =
+* Tested OK with WooCommerce 11.1
+* Tested OK with WordPress 7.1
+* Made compatible with PHP 8.4
 
 = 1.4.8 =
 * Tested OK with WordPress 6.9
@@ -217,6 +222,11 @@ If you are facing any issues, please create a topic at the plugin support sectio
 * Initial Version release.
 
 == Upgrade Notice ==
+
+= 1.4.9 =
+* Tested OK with WooCommerce 11.1
+* Tested OK with WordPress 7.1
+* Made compatible with PHP 8.4
 
 = 1.4.8 =
 * Tested OK with WordPress 6.9

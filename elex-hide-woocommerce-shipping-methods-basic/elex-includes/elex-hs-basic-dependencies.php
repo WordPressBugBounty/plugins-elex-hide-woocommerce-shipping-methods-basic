@@ -20,6 +20,6 @@ class ELEX_HS_BASIC_Dependencies {
 		if ( ! self::$active_plugins ) {
 			self::init();
 		}
-		return in_array( 'woocommerce/woocommerce.php', self::$active_plugins ) || array_key_exists( 'woocommerce/woocommerce.php', self::$active_plugins );
+		return in_array( 'woocommerce/woocommerce.php', self::$active_plugins, true ) || array_key_exists( 'woocommerce/woocommerce.php', self::$active_plugins );
 	}
 }

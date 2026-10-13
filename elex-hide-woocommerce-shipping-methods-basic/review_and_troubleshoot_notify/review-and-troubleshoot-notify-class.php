@@ -50,7 +50,8 @@ if ( ! class_exists( 'Elex_Review_Components' ) ) {
 				$this->update_option( 'review_will_do_it_later', strtotime( '+1 day' ) );
 			}
 
-			wp_redirect( remove_query_arg( array( 'plugin_basename', 'review_component_action' ) ) );
+			wp_safe_redirect( remove_query_arg( array( 'plugin_basename', 'review_component_action' ) ) );
+			exit;
 		}
 
 		public function on_activation() {

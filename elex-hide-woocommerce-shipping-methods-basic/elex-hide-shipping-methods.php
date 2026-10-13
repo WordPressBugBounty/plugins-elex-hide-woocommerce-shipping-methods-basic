@@ -3,14 +3,14 @@
  * Plugin Name: ELEX Hide WooCommerce Shipping Methods (BASIC)
  * Plugin URI: https://elextensions.com/plugin/elex-hide-woocommerce-shipping-methods-plugin-free-version/
  * Description: Hide WooCommerce Shipping Methods based on certain conditions set. Set conditions based on Shipping Class, Order Total Weight, Certain Shipping Methods, etc.
- * Version: 1.4.8
+ * Version: 1.4.9
  * Author: ELEXtensions
  * Author URI: https://elextensions.com/
  * Developer: ELEXtensions
  * Developer URI: https://elextensions.com
- * Text Domain: elex-hide-shipping-methods
+ * Text Domain: elex-hide-woocommerce-shipping-methods-basic
  * WC requires at least: 2.6
- * WC tested up to: 10
+ * WC tested up to: 11.1
  */
 
 if (!defined('ABSPATH')) {
@@ -37,25 +37,25 @@ function get_activated_plugins() {
 function woocommerce_activation_notice_in_hs_basic() {  ?>
 	<div id="message" class="error">
 		<p>
-			<?php echo( esc_attr_e( 'WooCommerce plugin must be active for ELEX Hide WooCommerce Shipping Methods Basic plugin to work.', 'elex-hide-shipping' ) ); ?>
+			<?php echo( esc_attr_e( 'WooCommerce plugin must be active for ELEX Hide WooCommerce Shipping Methods Basic plugin to work.', 'elex-hide-woocommerce-shipping-methods-basic' ) ); ?>
 		</p>
 	</div>
 	<?php
 }
 if (defined('ELEX_HIDE_SHIPPING_METHODS_PLUGIN_PATH')) {
 
-	$hs_plugins        = array('elex-hide-shipping-methods/elex-hide-shipping-methods.php' => esc_html__('ELEX Hide WooCommerce Shipping Methods Premium version is already installed and activated. Please deactivate to activate basic or woocommerce version and then try again. For any issues, kindly contact our ', 'elex-hide-shipping'), 
-	'woocommerce-shipping-hide-woocommerce-shipping-methods-plugin/elex-hide-shipping-methods.php' => esc_html__('Hide Shipping Methods for WooCommerce is already installed and activated. Please deactivate to activate basic or premium version and then try again. For any issues, kindly contact our ', 'elex-hide-shipping'));
+	$hs_plugins        = array('elex-hide-shipping-methods/elex-hide-shipping-methods.php' => esc_html__('ELEX Hide WooCommerce Shipping Methods Premium version is already installed and activated. Please deactivate to activate basic or woocommerce version and then try again. For any issues, kindly contact our ', 'elex-hide-woocommerce-shipping-methods-basic'), 
+	'woocommerce-shipping-hide-woocommerce-shipping-methods-plugin/elex-hide-shipping-methods.php' => esc_html__('Hide Shipping Methods for WooCommerce is already installed and activated. Please deactivate to activate basic or premium version and then try again. For any issues, kindly contact our ', 'elex-hide-woocommerce-shipping-methods-basic'));
 	$current_hs_plugin = plugin_basename(__FILE__);
 	foreach ($hs_plugins as $hs_plugins_key => $error_msg) {
 		if ($current_hs_plugin === $hs_plugins_key) {
 			continue;
 		}
 		if (array_key_exists($hs_plugins_key, get_activated_plugins())) {
-			wp_die(wp_kses_post($error_msg) . "<a target='_blank' href='https://elextensions.com/support/'>" . esc_html__('Support', 'elex-hide-shipping') . '</a>.', '', array('back_link' => 1));
+			wp_die(wp_kses_post($error_msg) . "<a target='_blank' href='https://elextensions.com/support/'>" . esc_html__('Support', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>.', '', array('back_link' => 1));
 		}
-		if (in_array($hs_plugins_key, get_activated_plugins())) {
-			wp_die(wp_kses_post($error_msg) . "<a target='_blank' href='https://elextensions.com/support/'>" . esc_html__('Support', 'elex-hide-shipping') . '</a>.', '', array('back_link' => 1));
+		if (in_array($hs_plugins_key, get_activated_plugins(), true)) {
+			wp_die(wp_kses_post($error_msg) . "<a target='_blank' href='https://elextensions.com/support/'>" . esc_html__('Support', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>.', '', array('back_link' => 1));
 		}
 	}
 } else {
@@ -84,7 +84,7 @@ if (defined('ELEX_HIDE_SHIPPING_METHODS_PLUGIN_PATH')) {
 		  * Show message for the first installation
 		   * */
 		if (!get_option('elex_hs_first_installation_msg')) { 
-			if ( in_array('elex-hide-shipping-methods-basic/elex-hide-shipping-methods.php', get_activated_plugins() ) ) {
+			if ( in_array('elex-hide-woocommerce-shipping-methods-basic/elex-hide-shipping-methods.php', get_activated_plugins(), true ) || in_array('elex-hide-shipping-methods-basic/elex-hide-shipping-methods.php', get_activated_plugins(), true ) ) {
 				$allowed_html = wp_kses_allowed_html('post');
 				echo wp_kses("<div class='updated'><strong>ELEX Hide Shipping Methods</strong> is activated. Go to <a href=" . admin_url('admin.php?page=elex-hide-shipping') . '>Settings</a> to configure.</div>', $allowed_html);
 			}
@@ -98,11 +98,11 @@ if (defined('ELEX_HIDE_SHIPPING_METHODS_PLUGIN_PATH')) {
 	}
 	add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'elex_hs_action_links');
 	function elex_hs_action_links( $links) {
-		$plugin_links = array('<a href="' . admin_url('admin.php?page=elex-hide-shipping') . '">' . __('Settings', 'elex-hide-shipping-methods') . '</a>', '<a href="https://elextensions.com/knowledge-base/how-to-set-up-elex-woocommerce-hide-woocommerce-shipping-methods-plugin/" target="_blank">' . __('Documentation', 'elex-hide-shipping-methods') . '</a>', '<a href="https://elextensions.com/support/" target="_blank">' . __('Support', 'elex-hide-shipping-methods') . '</a>', '<a href="https://elextensions.com/plugin/hide-woocommerce-shipping-methods/" target="_blank">' . __('Premium Upgrade', 'elex-hide-shipping-methods') . '</a>', );
+		$plugin_links = array('<a href="' . admin_url('admin.php?page=elex-hide-shipping') . '">' . __('Settings', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>', '<a href="https://elextensions.com/knowledge-base/how-to-set-up-elex-woocommerce-hide-woocommerce-shipping-methods-plugin/" target="_blank">' . __('Documentation', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>', '<a href="https://elextensions.com/support/" target="_blank">' . __('Support', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>', '<a href="https://elextensions.com/plugin/hide-woocommerce-shipping-methods/" target="_blank">' . __('Premium Upgrade', 'elex-hide-woocommerce-shipping-methods-basic') . '</a>', );
 		return array_merge($plugin_links, $links);
 	}
 	function elex_hs_load_plugin_textdomain() {
-		load_plugin_textdomain('elex-hide-shipping-methods', false, basename(dirname(__FILE__)) . '/lang/');
+		load_plugin_textdomain('elex-hide-woocommerce-shipping-methods-basic', false, basename(dirname(__FILE__)) . '/lang/');
 	}
 	add_action('plugins_loaded', 'elex_hs_load_plugin_textdomain');
 } // review component
